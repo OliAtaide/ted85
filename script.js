@@ -89,9 +89,23 @@ $(".carousel-inner").append(
   )
 );
 
-$(document).on("click", ".nav-link", function name() {
+$(document).on("click", ".nav-link", function () {
   const index = $(this).data("bs-slide");
   $(".nav-link").removeClass("active");
   $(this).addClass("active");
   $("#carouselExampleControls").carousel(index);
 });
+
+$("#nextBtn").click(function () {
+  $("#mainContainer").hide();
+  $(".subheader").hide();
+  $("#endContainer").show();
+});
+
+$("#backBtn").click(function () {
+  $("#mainContainer").show();
+  $(".subheader").show();
+  $("#endContainer").hide();
+});
+
+$("#endContainer").hide();
